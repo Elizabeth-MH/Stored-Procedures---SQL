@@ -36,6 +36,7 @@ GROUP BY TerritoryID
 	 GROUP BY   TerritoryID
 
  END
+ 
 --RUN the Stored Procedure
 
  EXEC proc_TerritorySalesByYear '2011-01-01','2011-12-31',4 --Yields Total Sales of $3,144,713.0989 
@@ -75,6 +76,7 @@ AS
 		GROUP BY         b.Name
 
 END
+
 --RUN the Stored Procedure
 
 EXEC proc_SalesByTerritory 'Northwest','2011-01-01','2011-12-31'--Yields Total Sales of $2,620,943.826
@@ -123,6 +125,7 @@ BEGIN
 
 
 END
+
 --RUN
 EXECUTE proc_TerritoryTop5Sales_ByProduct 'Canada','2012-01-01','2012-12-31'
 
@@ -374,4 +377,5 @@ SET NOCOUNT ON;
  ON			a.SalesOrderID =b.SalesOrderID
  WHERE		a.OrderDate BETWEEN @StartDate AND @EndDate
  GROUP BY	a.SalesOrderID,b.SalesOrderDetailID
+ 
 END
